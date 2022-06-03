@@ -5,7 +5,7 @@
         return computerSelection;
     }
 
-    const playerSelection = "PAPER";
+    const playerSelection = "scissors";
     const computerSelection = computerPlay();
     console.log(playRound(playerSelection,computerSelection));
 
@@ -38,7 +38,16 @@
            decision = `It's a tie! ${computerSelection} crumples with ${playerSelection}`;
         }
 
-       
+       //scissors win and lose conditions
+       else if (playerSelection === "scissors" && computerSelection !== "rock" && computerSelection !== "scissors"){
+           decision = `You win! ${playerSelection} beats ${computerSelection}`;
+        }
+        else if (playerSelection === "scissors" && computerSelection === "rock"){
+           decision = `You lose! ${computerSelection} beats ${playerSelection}`;
+        }
+        else if (playerSelection === "scissors" && computerSelection === "scissors"){
+           decision = `It's a tie! ${computerSelection} snips with ${playerSelection}`;
+        }
         return decision;
     }
 
