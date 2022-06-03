@@ -1,11 +1,34 @@
 <script>
     function computerPlay(){
-        const values = ["Rock", "Paper" , "Scissors"];
-        let computerChoice = values[Math.floor(Math.random () * values.length)];
-
-       
-        return computerChoice;
+        const choices = ["Rock", "Paper" , "Scissors"];
+        let computerSelection = choices[Math.floor(Math.random () * choices.length)];
+        return computerSelection;
     }
 
-    computerPlay();
+    const playerSelection = "rock";
+    const computerSelection = computerPlay();
+    console.log(playRound(playerSelection,computerSelection));
+
+    function playRound(playerSelection, computerSelection){
+        // Changing to selections to lowercase to be case insensitive
+        playerSelection = playerSelection.toLowerCase();
+        computerSelection = computerSelection.toLowerCase();
+
+        let decision = ''
+        //rock conditions
+        if (playerSelection === "rock" && computerSelection !== "paper" && computerSelection !== "rock"){
+           decision = `You win! ${playerSelection} beats ${computerSelection}`;
+        }
+        else if (playerSelection === "rock" && computerSelection === "paper"){
+           decision = `You lose! ${computerSelection} beats ${playerSelection}`;
+        }
+        else if (playerSelection === "rock" && computerSelection === "rock"){
+           decision = `It's a tie! ${computerSelection} bumps with ${playerSelection}`;
+        }
+
+
+        return decision;
+    }
+
+    
 </script>
