@@ -5,7 +5,7 @@
         return computerSelection;
     }
 
-    const playerSelection = "rock";
+    const playerSelection = "PAPER";
     const computerSelection = computerPlay();
     console.log(playRound(playerSelection,computerSelection));
 
@@ -15,7 +15,7 @@
         computerSelection = computerSelection.toLowerCase();
 
         let decision = ''
-        //rock conditions
+        //rock win and lose conditions
         if (playerSelection === "rock" && computerSelection !== "paper" && computerSelection !== "rock"){
            decision = `You win! ${playerSelection} beats ${computerSelection}`;
         }
@@ -25,8 +25,20 @@
         else if (playerSelection === "rock" && computerSelection === "rock"){
            decision = `It's a tie! ${computerSelection} bumps with ${playerSelection}`;
         }
+   
+   
+         //paper win and lose conditions
+        else if (playerSelection === "paper" && computerSelection !== "scissors" && computerSelection !== "paper"){
+           decision = `You win! ${playerSelection} beats ${computerSelection}`;
+        }
+        else if (playerSelection === "paper" && computerSelection === "scissors"){
+           decision = `You lose! ${computerSelection} beats ${playerSelection}`;
+        }
+        else if (playerSelection === "paper" && computerSelection === "paper"){
+           decision = `It's a tie! ${computerSelection} crumples with ${playerSelection}`;
+        }
 
-
+       
         return decision;
     }
 
