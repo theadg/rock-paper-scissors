@@ -1,11 +1,12 @@
 <script>
+    //getting computer choice 
     function computerPlay(){
         const choices = ["Rock", "Paper" , "Scissors"];
         let computerSelection = choices[Math.floor(Math.random () * choices.length)];
         return computerSelection;
     }
 
-
+//knowing the round winner
     function playRound(playerSelection, computerSelection){
         // Changing to selections to lowercase to be case insensitive
         playerSelection = playerSelection.toLowerCase();
@@ -49,7 +50,7 @@
         return decision;
     }
 
-
+//playing the game 5 times
     function game(){
         let playerScore = 0;
         let computerScore = 0;
@@ -62,38 +63,22 @@
 
          //counter for scores
             //player score
-            if (playRound(playerSelection,computerSelection).includes("win")){
-                 playerScore += 1;
-             }
-            //computer score
-            else if (playRound(playerSelection,computerSelection).includes("lose")){
-                 computerScore +=1;
-            }
-           console.log(playRound(playerSelection,computerSelection));
-        }
-
-        //checking who wins
-        getWinner(playerScore, computerScore);
-    }
-
-    function gameScore(decision){
-        
-        if (decision.includes("win")){
+            if (decision.includes("win")){
                  playerScore += 1;
              }
             //computer score
             else if (decision.includes("lose")){
                  computerScore +=1;
             }
-            console.log(playerScore);
-            console.log(computerScore);
            console.log(decision);
-            
-        return [playerScore, computerScore];
+        }
+        
+        //checking who wins
+        getWinner(playerScore, computerScore);
     }
 
-    
-   
+
+    //function for checking the winner
     function getWinner(playerScore, computerScore){
      
         if (playerScore > computerScore){
@@ -106,7 +91,6 @@
             alert(`You lost! Your score is ${playerScore} and the computer score is ${computerScore}`);
         }
     }
-    
    game();
     
 </script>
