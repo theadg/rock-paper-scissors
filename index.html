@@ -49,9 +49,6 @@
         return decision;
     }
 
-    //     //testing out the function
-     
-    // console.log(playRound(playerSelection,computerSelection));
 
     function game(){
         let playerScore = 0;
@@ -61,9 +58,9 @@
 
             const playerSelection = window.prompt("Rock, Paper, or Scissors?");
             const computerSelection = computerPlay();
-            playRound(playerSelection,computerSelection);
+            decision = playRound(playerSelection,computerSelection);
 
-            //counter for scores
+         //counter for scores
             //player score
             if (playRound(playerSelection,computerSelection).includes("win")){
                  playerScore += 1;
@@ -76,14 +73,40 @@
         }
 
         //checking who wins
+        getWinner(playerScore, computerScore);
+    }
+
+    function gameScore(decision){
+        
+        if (decision.includes("win")){
+                 playerScore += 1;
+             }
+            //computer score
+            else if (decision.includes("lose")){
+                 computerScore +=1;
+            }
+            console.log(playerScore);
+            console.log(computerScore);
+           console.log(decision);
+            
+        return [playerScore, computerScore];
+    }
+
+    
+   
+    function getWinner(playerScore, computerScore){
+     
         if (playerScore > computerScore){
             alert(`You won! Your score is ${playerScore} and the computer score is ${computerScore}`);
+        }
+        else if (playerScore === computerScore){
+            alert(`It's a tie! Your score is ${playerScore} and the computer score is ${computerScore}`);
         }
         else{
             alert(`You lost! Your score is ${playerScore} and the computer score is ${computerScore}`);
         }
     }
-
+    
    game();
     
 </script>
