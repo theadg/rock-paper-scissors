@@ -22,6 +22,7 @@ playAgain.addEventListener('click', () => {
 function reset (){
     computerScore = 0;
     playerScore = 0;
+    cChoice.textContent = 0;
     pScore.textContent = 'Player: 0';
     cScore.textContent = 'Computer: 0';
 }
@@ -53,6 +54,9 @@ buttons.forEach((button) => {
         //changing choices;
         pChoice.textContent = playerChoice(playerSelection);
         cChoice.textContent = playerChoice(computerSelection);
+        // if (pChoice.textContent === '?'){
+        //     cChoice.textContent ='?';
+        // }
 
         if (playerScore === 5 || computerScore === 5){
             modal.style.display = "block";
@@ -77,6 +81,7 @@ buttons.forEach((button) => {
             choice = '✌'; 
             else 
             choice = '?';
+
             return choice;
         }
 
