@@ -1,96 +1,57 @@
-<script>
-    //getting computer choice 
-    function computerPlay(){
-        const choices = ["Rock", "Paper" , "Scissors"];
-        let computerSelection = choices[Math.floor(Math.random () * choices.length)];
-        return computerSelection;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
-//knowing the round winner
-    function playRound(playerSelection, computerSelection){
-        // Changing to selections to lowercase to be case insensitive
-        playerSelection = playerSelection.toLowerCase();
-        computerSelection = computerSelection.toLowerCase();
+</head>
+<body>
 
-        let decision = ''
-        //rock win and lose conditions
-        if (playerSelection === "rock" && computerSelection !== "paper" && computerSelection !== "rock"){
-           decision = `You win! ${playerSelection} beats ${computerSelection}`;
-        }
-        else if (playerSelection === "rock" && computerSelection === "paper"){
-           decision = `You lose! ${computerSelection} beats ${playerSelection}`;
-        }
-        else if (playerSelection === "rock" && computerSelection === "rock"){
-           decision = `It's a tie! ${computerSelection} bumps with ${playerSelection}`;
-        }
-   
-   
-         //paper win and lose conditions
-        else if (playerSelection === "paper" && computerSelection !== "scissors" && computerSelection !== "paper"){
-           decision = `You win! ${playerSelection} beats ${computerSelection}`;
-        }
-        else if (playerSelection === "paper" && computerSelection === "scissors"){
-           decision = `You lose! ${computerSelection} beats ${playerSelection}`;
-        }
-        else if (playerSelection === "paper" && computerSelection === "paper"){
-           decision = `It's a tie! ${computerSelection} crumples with ${playerSelection}`;
-        }
-
-       //scissors win and lose conditions
-       else if (playerSelection === "scissors" && computerSelection !== "rock" && computerSelection !== "scissors"){
-           decision = `You win! ${playerSelection} beats ${computerSelection}`;
-        }
-        else if (playerSelection === "scissors" && computerSelection === "rock"){
-           decision = `You lose! ${computerSelection} beats ${playerSelection}`;
-        }
-        else if (playerSelection === "scissors" && computerSelection === "scissors"){
-           decision = `It's a tie! ${computerSelection} snips with ${playerSelection}`;
-        }
-
-        return decision;
-    }
-
-//playing the game 5 times
-    function game(){
-        let playerScore = 0;
-        let computerScore = 0;
-
-        for (let i = 0; i <5; i++){
-
-            const playerSelection = window.prompt("Rock, Paper, or Scissors?");
-            const computerSelection = computerPlay();
-            decision = playRound(playerSelection,computerSelection);
-
-         //counter for scores
-            //player score
-            if (decision.includes("win")){
-                 playerScore += 1;
-             }
-            //computer score
-            else if (decision.includes("lose")){
-                 computerScore +=1;
-            }
-           console.log(decision);
-        }
-        
-        //checking who wins
-        getWinner(playerScore, computerScore);
-    }
+<h1 class = "main">Rock Paper Scissors</h1>
 
 
-    //function for checking the winner
-    function getWinner(playerScore, computerScore){
-     
-        if (playerScore > computerScore){
-            alert(`You won! Your score is ${playerScore} and the computer score is ${computerScore}`);
-        }
-        else if (playerScore === computerScore){
-            alert(`It's a tie! Your score is ${playerScore} and the computer score is ${computerScore}`);
-        }
-        else{
-            alert(`You lost! Your score is ${playerScore} and the computer score is ${computerScore}`);
-        }
-    }
-   game();
+
+<p>Choose your weapon</p>
+<div class="buttons">
+    <button class = "btn" id = "rock">✊</button>
+    <button class = "btn" id = "paper">🖐</button>
+    <button class = "btn" id = "scissors">✌</button>
+</div>
+
+
+
+<!-- <div id = "computerSelection"></div>             COMPUTER SELECTION-->
+<h1 id = "roundResult">First to 5 wins</h1>
+
+
+<div class="cards">
+    <div class="playerScoreCard card">
+        <p class ="choice" id = "playerChoice">?</p>
+        <p id = "playerScore">Player: 0</p>
+    </div>
+
+    <div class="computerScoreCard card">
+        <p  class ="choice" id = "computerChoice">?</p>
+        <p id = "computerScore">Computer: 0</p>
+    </div>
+</div>
+
+<div class="modal" id = "modal">
+    <div class="modalContent">
+        <p id = "matchResult"></p>
+        <button class = "modalBtn" id = "modalBtn">Play Again</button>
+    </div>
+</div>
+
+<!-- <div id = "roundResult"></div> -->
+
+    <script src="script.js"></script>
     
-</script>
+</body>
+</html>
