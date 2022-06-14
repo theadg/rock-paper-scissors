@@ -9,7 +9,9 @@ const cChoice = document.querySelector('#computerChoice');
 const playAgain = document.querySelector('#modalBtn');
 const matchResult = document.querySelector('#matchResult');
 const modal =  document.querySelector('#modal');
-
+const pAddScore = document.querySelector('#pAddScore');
+const cAddScore = document.querySelector('#cAddScore')
+const addOne = document.getElementsByClassName('addScore');
 computerScore = 0;
 playerScore = 0;
 
@@ -51,6 +53,7 @@ buttons.forEach((button) => {
         //displaying round score:
         roundScore(roundWinner);
 
+
         //changing choices;
         pChoice.textContent = playerChoice(playerSelection);
         cChoice.textContent = playerChoice(computerSelection);
@@ -67,11 +70,16 @@ buttons.forEach((button) => {
             matchResult.textContent = 'You fucking suck';
         }
         
+    
             
     
     });
 });
 
+
+        // function addScore(){
+        //     addOne.style.display = "block";
+        // }
         function playerChoice(choice){
             if (choice === 'rock')
             choice = '✊';
@@ -85,15 +93,57 @@ buttons.forEach((button) => {
             return choice;
         }
 
+        function remove(){
+            pAddScore.style.display = 'none';
+            pChoice.classList.remove('none');
+            pScore.classList.remove('none');
+
+            cAddScore.style.display = 'none';
+            cChoice.classList.remove('none');
+            cScore.classList.remove('none');
+        }
+        setTimeout(function (){
+            $(pAddScore).style.display = 'none';
+            $(pChoice).classList.remove('none');
+            $(pScore).classList.remove('none');
+
+           
+
+        }, 200);
         function roundScore(roundWinner){
             if (roundWinner.includes("win")){
                 playerScore += 1;
                 pScore.textContent = `Player: ${playerScore}`;
+                pAddScore.style.display = 'block';
+                pChoice.classList.add('none');
+                pScore.classList.add('none');
+
+                setTimeout(function (){
+                    pAddScore.style.display = 'none';
+                    pChoice.classList.remove('none');
+                    pScore.classList.remove('none');
+        
+                   
+        
+                }, 500);
+              
             }
             //computer score
             else if (roundWinner.includes("lose")){
                 computerScore +=1;
                 cScore.textContent = `Computer: ${computerScore}`;
+                cAddScore.style.display = 'block';
+                cChoice.classList.add('none');
+                cScore.classList.add('none');
+
+                setTimeout(function (){
+                    cAddScore.style.display = 'none';
+                    cChoice.classList.remove('none');
+                    cScore.classList.remove('none');
+        
+                   
+        
+                }, 500);
             }
         }
 
