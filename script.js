@@ -68,6 +68,8 @@ buttons.forEach((button) => {
             matchResult.textContent = 'You won';
             else
             matchResult.textContent = 'You fucking suck';
+
+            reset();
         }
         
     
@@ -103,9 +105,9 @@ buttons.forEach((button) => {
             cScore.classList.remove('none');
         }
         setTimeout(function (){
-            $(pAddScore).style.display = 'none';
-            $(pChoice).classList.remove('none');
-            $(pScore).classList.remove('none');
+            pAddScore.style.display = 'none';
+            pChoice.classList.remove('none');
+            pScore.classList.remove('none');
 
            
 
@@ -114,10 +116,13 @@ buttons.forEach((button) => {
             if (roundWinner.includes("win")){
                 playerScore += 1;
                 pScore.textContent = `Player: ${playerScore}`;
+                pAddScore.classList.add('scale');
                 pAddScore.style.display = 'block';
+                pAddScore.style.transform = 'scale(1.2)';
                 pChoice.classList.add('none');
                 pScore.classList.add('none');
 
+                cChoice.classList.add('lose');
                 setTimeout(function (){
                     pAddScore.style.display = 'none';
                     pChoice.classList.remove('none');
@@ -136,6 +141,10 @@ buttons.forEach((button) => {
                 cChoice.classList.add('none');
                 cScore.classList.add('none');
 
+                
+                cChoice.classList.add('lose');
+                
+            
                 setTimeout(function (){
                     cAddScore.style.display = 'none';
                     cChoice.classList.remove('none');
