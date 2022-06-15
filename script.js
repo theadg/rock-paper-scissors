@@ -79,9 +79,7 @@ buttons.forEach((button) => {
 });
 
 
-        // function addScore(){
-        //     addOne.style.display = "block";
-        // }
+     
         function playerChoice(choice){
             if (choice === 'rock')
             choice = '✊';
@@ -95,23 +93,8 @@ buttons.forEach((button) => {
             return choice;
         }
 
-        function remove(){
-            pAddScore.style.display = 'none';
-            pChoice.classList.remove('none');
-            pScore.classList.remove('none');
-
-            cAddScore.style.display = 'none';
-            cChoice.classList.remove('none');
-            cScore.classList.remove('none');
-        }
-        setTimeout(function (){
-            pAddScore.style.display = 'none';
-            pChoice.classList.remove('none');
-            pScore.classList.remove('none');
-
-           
-
-        }, 200);
+       
+   
         function roundScore(roundWinner){
             if (roundWinner.includes("win")){
                 playerScore += 1;
@@ -122,7 +105,10 @@ buttons.forEach((button) => {
                 pChoice.classList.add('none');
                 pScore.classList.add('none');
 
+                pChoice.classList.remove('lose');
                 cChoice.classList.add('lose');
+
+        
                 setTimeout(function (){
                     pAddScore.style.display = 'none';
                     pChoice.classList.remove('none');
@@ -141,9 +127,9 @@ buttons.forEach((button) => {
                 cChoice.classList.add('none');
                 cScore.classList.add('none');
 
-                
-                cChoice.classList.add('lose');
-                
+                cChoice.classList.remove('lose');
+                pChoice.classList.add('lose');
+               
             
                 setTimeout(function (){
                     cAddScore.style.display = 'none';
@@ -222,55 +208,8 @@ buttons.forEach((button) => {
             return decision;
         }
     
-    //playing the game 5 times
-        function game(){
-            let playerScore = 0;
-            let computerScore = 0;
-    
-            for (let i = 0; i <5; i++){
-    
-                const playerSelection = window.prompt("Rock, Paper, or Scissors?");
-                const computerSelection = computerPlay();
-                decision = playRound(playerSelection,computerSelection);
-    
-             //counter for scores
-                //player score
-                if (decision.includes("win")){
-                     playerScore += 1;
-                 }
-                //computer score
-                else if (decision.includes("lose")){
-                     computerScore +=1;
-                }
-               console.log(decision);
-            }
-            
-            //checking who wins
-            getWinner(playerScore, computerScore);
-        }
+
     
     
-        //function for checking the winner
-        function getWinner(playerScore, computerScore){
-         
-            if (playerScore > computerScore){
-                alert(`You won! Your score is ${playerScore} and the computer score is ${computerScore}`);
-            }
-            else if (playerScore === computerScore){
-                alert(`It's a tie! Your score is ${playerScore} and the computer score is ${computerScore}`);
-            }
-            else{
-                alert(`You lost! Your score is ${playerScore} and the computer score is ${computerScore}`);
-            }
-        }
 
-
-
-
-
-
-
-
-        
-    //    game();
     
