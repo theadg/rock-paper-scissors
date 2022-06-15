@@ -24,7 +24,8 @@ playAgain.addEventListener('click', () => {
 function reset (){
     computerScore = 0;
     playerScore = 0;
-    cChoice.textContent = 0;
+    pChoice.textContent = '?';
+    cChoice.textContent = '?';
     pScore.textContent = 'Player: 0';
     cScore.textContent = 'Computer: 0';
     pChoice.classList.remove('lose');
