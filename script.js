@@ -64,6 +64,7 @@ buttons.forEach((button) => {
         }
 
         if (playerScore === 5 || computerScore === 5){
+            reset();
             modal.style.display = "block";
 
             if (playerScore === 5)
@@ -71,7 +72,7 @@ buttons.forEach((button) => {
             else
             matchResult.textContent = 'You fucking suck';
 
-            reset();
+            
         }
         
     
