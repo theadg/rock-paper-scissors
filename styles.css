@@ -141,6 +141,11 @@ p{
 }
 
 .lose{
-    transform: scale(0.6);
+    transform: scale(0.8);
     opacity: 0.5;
+
+}
+
+.dark{
+    background-color: #001d3d;
 }
