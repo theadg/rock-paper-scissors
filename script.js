@@ -27,6 +27,8 @@ function reset (){
     cChoice.textContent = 0;
     pScore.textContent = 'Player: 0';
     cScore.textContent = 'Computer: 0';
+    pChoice.classList.remove('lose');
+    cChoice.classList.remove('lose');
 }
 //iterating through each button
 buttons.forEach((button) => {
@@ -57,9 +59,9 @@ buttons.forEach((button) => {
         //changing choices;
         pChoice.textContent = playerChoice(playerSelection);
         cChoice.textContent = playerChoice(computerSelection);
-        // if (pChoice.textContent === '?'){
-        //     cChoice.textContent ='?';
-        // }
+        if (pChoice.textContent === '?'){
+            cChoice.textContent ='?';
+        }
 
         if (playerScore === 5 || computerScore === 5){
             modal.style.display = "block";
