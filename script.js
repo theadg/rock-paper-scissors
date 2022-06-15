@@ -142,6 +142,10 @@ buttons.forEach((button) => {
         
                 }, 500);
             }
+            else if (roundWinner.includes("tie")){
+                cChoice.classList.remove('lose');
+                pChoice.classList.remove('lose');
+            }
         }
 
 
