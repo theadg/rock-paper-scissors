@@ -65,19 +65,19 @@ buttons.forEach((button) => {
         }
 
         if (playerScore === 5 || computerScore === 5){
-            reset();
+        
             modal.style.display = "block";
-
             if (playerScore === 5)
             matchResult.textContent = 'You won';
             else
             matchResult.textContent = 'You fucking suck';
 
+           
             
         }
         
-    
-            
+  
+ 
     
     });
 });
