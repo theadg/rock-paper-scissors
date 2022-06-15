@@ -149,3 +149,17 @@ p{
 .dark{
     background-color: #001d3d;
 }
+
+
+/* Footer */
+footer{
+    position: absolute;
+    padding: 1em;
+    bottom: 0;
+ 
+    
+}
+p.yellow{
+    color: #ffc300;
+    text-align: center;
+}
