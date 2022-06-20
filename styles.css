@@ -365,10 +365,10 @@ and (max-width: 1280px){
 
     /* btn */
     .btn{
-        height:  80px;
-        width: 80px;
+        height:  90px;
+        width: 90px;
         font-size: 55px;
-        padding-bottom: 0.5em;
+        padding-bottom: 1.6em;
         padding-top: 0.1em;
     }
 
@@ -378,13 +378,14 @@ and (max-width: 1280px){
     }
     /* card */
     .cards{
-        gap: 2em;
+        gap: auto;
     }
     
     .card{
         
-        height: 120px;
+        height: 135px;
         width: 130px;
         padding-bottom: 1em;
     }
 }
+
