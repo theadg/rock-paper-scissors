@@ -16,7 +16,7 @@ body{
     align-items: center;
     gap: 2em;
     
-    padding-top: 10em;
+    padding-top: 5em;
 }
 
 
@@ -162,4 +162,172 @@ footer{
 p.yellow{
     color: #ffc300;
     text-align: center;
+}
+
+
+
+/* small devices, phones */
+
+@media only screen 
+and (min-width: 280px)
+and (max-width: 399px)
+{
+      /* top padding */
+      body{
+        margin-top: 10vh;
+        padding-top: 0vh;
+    }
+    /* text */
+    .main{
+        font-size: 1.5em;
+    }
+
+
+
+    p{
+        font-size: 1em;
+    }
+
+
+    /* btn */
+    .buttons{
+        gap: 1.2em;
+    }
+    .btn{
+        height:  70px;
+        width: 70px;
+        font-size: 50px;
+    }
+
+    /* result */
+    .result{
+        font-size: 1em;
+    }
+    /* card */
+    .cards{
+        gap: 1.5em;
+    }
+    
+    .card{
+        
+        height: 100px;
+        width: 110px;
+        padding-bottom: 1em;
+        font-size: 0.8em;
+    }
+
+}
+
+@media only screen 
+and (min-width: 400px) 
+and (max-width: 550px){
+    
+    /* top padding */
+    body{
+        padding-top: 18vh; 
+    }
+    /* text */
+    .main{
+        font-size: 2em;
+    }
+
+
+
+    p{
+        font-size: 1em;
+    }
+
+
+    /* btn */
+    .btn{
+        height:  80px;
+        width: 80px;
+        font-size: 60px;
+    }
+
+    /* result */
+    .result{
+        font-size: 1.3em;
+    }
+    /* card */
+    .cards{
+        gap: 2em;
+    }
+    
+    .card{
+        
+        height: 120px;
+        width: 130px;
+        padding-bottom: 1em;
+    }
+
+}
+
+
+
+
+/* medium devices */
+@media screen and (max-width: 1440px){
+     /* top padding */
+     body{
+        padding-top: 20vh;
+    }
+}
+
+
+@media screen and (max-height: 600px){
+    body{
+        padding-top: 8vh;
+    }
+
+    /* text */
+    .main{
+        font-size: 2em;
+    }
+
+
+
+    p{
+        font-size: 1em;
+    }
+
+
+    /* btn */
+    .btn{
+        height:  80px;
+        width: 80px;
+        font-size: 60px;
+    }
+
+    /* result */
+    .result{
+        font-size: 1.3em;
+    }
+    /* card */
+    .cards{
+        gap: 2em;
+    }
+    
+    .card{
+        
+        height: 120px;
+        width: 130px;
+        padding-bottom: 1em;
+    }
+}
+
+@media screen
+and (max-height: 800px)
+and (max-width: 1280px){
+    body{
+        padding-top: 8vh;
+    }
+}
+
+
+@media screen and (min-width: 1440px){
+       /* top padding */
+       body{
+        padding-top: 16vh;
+    }
 }
