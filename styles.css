@@ -200,7 +200,7 @@ and (max-width: 399px)
         height:  70px;
         width: 70px;
         font-size: 50px;
-        padding-bottom: 1.6em;
+        padding-bottom:0.5em;
         padding-top: 0.1em;
     }
 
@@ -310,6 +310,7 @@ and (max-width: 550px){
         height:  80px;
         width: 80px;
         font-size: 60px;
+        padding-bottom: 0.5em;
     }
 
     /* result */
@@ -368,7 +369,7 @@ and (max-width: 1280px){
         height:  90px;
         width: 90px;
         font-size: 55px;
-        padding-bottom: 1.6em;
+        padding-bottom: 0.5em;
         padding-top: 0.1em;
     }
 
